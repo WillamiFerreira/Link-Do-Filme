@@ -6,12 +6,13 @@ const Movie = require('../models/Movie')
 //exemplos
 //Função para objeter todos dados da coleção
 
+
 const getAllMovies = async () => {
     try{
-        const movies = await Movie.findById();
+        const movies = await Movie.find();
         return movies;
     }catch(err){
-        console.error('Erro ao obter todos os documentos ' + err.message);
+        res.status(500).json({message: err.message});
     }
 
 }

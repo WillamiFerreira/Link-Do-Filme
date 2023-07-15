@@ -1,7 +1,7 @@
 const movieModule = require('../modules/movieModules');
 
-const getAllMovies = (req, res) =>{
-    const movies = movieModule.getAllMovies()//método que faz querie
+const getAllMovies = async (req, res) =>{
+    const movies = await movieModule.getAllMovies()//método que faz querie
     res.send(movies)
 }
 
