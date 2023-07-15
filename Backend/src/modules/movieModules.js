@@ -17,9 +17,19 @@ const getAllMovies = async () => {
 
 }
 
-module.exports = {
-    getAllMovies
+const getMovieByTitle = async (movieTitle) => {
+    try{
+        const movie = await Movie.findOne({title: movieTitle});
+        return movie;
+
+    }catch(err){
+        res.status(500).json({message: err.message});
+    }
 }
 
+module.exports = {
+    getAllMovies,
+    getMovieByTitle
+}
 
 //Essas funções serão inportadadas na parta dos controllers
