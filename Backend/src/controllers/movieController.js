@@ -10,15 +10,14 @@ const getAllgetByTitleMovie = async (req, res) =>{
         const title = req.query.s
         const lowerTitle = title.toLowerCase() //Convertendo para lowercase
         const noAccentsLowerTitle = lowerTitle.normalize('NFD').replace(/[\u0300-\u036f]/g, "");//retirando os acentos
+        const noAccentsLowerTitleFinal = noAccentsLowerTitle.replaceAll("+", " ")//trocando os "+" por espaço vazio;
 
-        const movie = await movieModule.getMovieByTitle(noAccentsLowerTitle);
+        const movie = await movieModule.getMovieByTitle(noAccentsLowerTitleFinal);
         res.send(movie);
-        //res.send(noAccentsLowerTitle);
+        //res.send(noAccentsLowerTitleFinal);
 
     }
-
 }
-
 module.exports = {  //essas funções são inportadas no router
     getAllgetByTitleMovie,
     //getMovieByTitle
