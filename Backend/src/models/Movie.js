@@ -3,6 +3,10 @@ const mongoose = require('mongoose');
 const movieSchema = new mongoose.Schema({
     title: {
         type: String,
+        required: true,
+    },
+    portuguese_title:{
+        type: String,
         required: true
     },
     director: {

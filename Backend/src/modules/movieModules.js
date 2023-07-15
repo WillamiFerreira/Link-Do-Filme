@@ -19,7 +19,7 @@ const getAllMovies = async () => {
 
 const getMovieByTitle = async (movieTitle) => {
     try{
-        const movie = await Movie.findOne({title: movieTitle});
+        const movie = await Movie.findOne({$or: [ {title: movieTitle}, {portuguese_title: movieTitle} ]}); //teste 
         return movie;
 
     }catch(err){
