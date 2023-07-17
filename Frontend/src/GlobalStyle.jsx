@@ -4,8 +4,16 @@ const GlobalStyle = createGlobalStyle`
 *{
     margin:0;
     padding:0;
-    box-sizing: border-box;
     border: 0;
+    box-sizing: border-box;
+}
+
+#root{
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 body{
     font-family: 'Poppins', sans-serif;

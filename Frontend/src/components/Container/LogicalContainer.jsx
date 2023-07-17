@@ -1,4 +1,4 @@
-function Container({className, children}) {
+function LogicalContainer({className, children}) {
     return ( 
         <div className={className}>
             {children}
@@ -6,4 +6,4 @@ function Container({className, children}) {
      );
 }
 
-export default Container;
+export default LogicalContainer;
