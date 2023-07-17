@@ -1,10 +1,11 @@
-import './App.css'
+import ContainerStylled from './components/Container/Style';
+import SearchFormStyled from './components/SearchForm/Style';
 
 function App() {
   return(
-  <>
-    <h1>hello</h1>
-  </>
+    <ContainerStylled >
+      <SearchFormStyled direction='row' />bra
+    </ContainerStylled>
   );
 }
 
