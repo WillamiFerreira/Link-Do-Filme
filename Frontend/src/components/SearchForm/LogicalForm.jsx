@@ -6,10 +6,11 @@ import { TextInput } from "../FormFields/TextInput/TextInput";
 
 
 function LogicalForm({className}) {
-    const {movieName, selectedMovie, setMovieName, setSelectedMovie} = useMovieStore();
+    const {movieName, selectedMovie, setMovieName, setSelectedMovie, setReset} = useMovieStore();
 
     function handleInputChange(e){
         let value = e.target.value;
+        setReset();
         setMovieName(value)
     }
     //console.log(movieName)

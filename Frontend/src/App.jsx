@@ -1,13 +1,19 @@
 import { BannerContainer } from './components/BannerContainer/BannerContainer';
 import Container from './components/Container/Container';
-//import SearchFormStyled from './components/SearchForm/Style';
 import {Form} from './components/SearchForm/Form';
+import useMovieStore from './stories';
 
 function App() {
+  const {selectedMovie} = useMovieStore();
   return(
     <Container >
       <Form />
-      <BannerContainer />
+
+      {
+        selectedMovie && (
+          <BannerContainer />
+        )
+      }
     </Container>
   
   );
