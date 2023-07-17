@@ -1,17 +1,18 @@
 import styled from 'styled-components';
+import useMovieStore from '../../stories';
 
-function LogicalBannerContainer({className, bannerLink}){
+function LogicalBannerContainer({className}){
+    const {selectedMovie} = useMovieStore();
     return (
         <div className={className}>
-            <img src={bannerLink} alt="Movie Banner" />
+            <img src={selectedMovie.banner} alt="Movie Banner" />
         </div>
     )
 }
 
-
 export const BannerContainer = styled(LogicalBannerContainer)`
     //mobile
-    max-width: 200px;
+    max-width: 300px;
 
     & > img {
         display: block;

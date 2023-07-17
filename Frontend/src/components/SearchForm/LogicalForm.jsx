@@ -1,27 +1,29 @@
 import axios from 'axios';
+import useMovieStore from '../../stories';
 
 import { Button } from "../Button/Button";
 import { TextInput } from "../FormFields/TextInput/TextInput";
-import { useState } from "react";
 
 
 function LogicalForm({className}) {
-    const [movieName, setMovieName] = useState('')
+    const {movieName, selectedMovie, setMovieName, setSelectedMovie} = useMovieStore();
 
     function handleInputChange(e){
-        let value = e.target.value
+        let value = e.target.value;
         setMovieName(value)
-
     }
+    //console.log(movieName)
 
     function handleSubmit(e){
         e.preventDefault()
         axios.get(`http://localhost:3000/?s=${movieName}`)
-        .then(res => console.log(res.data))//res deve ser o objeto que representa o objeto
+        .then(res => setSelectedMovie(res.data))//res deve ser o objeto que representa o objeto
         .catch(err => console.log(err))
+
+        console.log(selectedMovie);
     }
 
-    console.log(movieName)
+
     return (
         <form className={className} onSubmit={handleSubmit}>
             <TextInput onChange={handleInputChange} name='name' />
