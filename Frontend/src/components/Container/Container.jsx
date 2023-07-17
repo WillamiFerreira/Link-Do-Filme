@@ -9,11 +9,14 @@ const Container = styled(LogicalContainer)`
     border: 2px solid black;
     max-width: 400px;
     padding: 10px;
+    text-align: ${((props) => props.textAlign || 'center')};
 
     //desktop
     @media screen and (min-width: 768px) {
         border: 2px solid orange;
         width: 600px;
+        flex-direction: ${ (props) => props.direction || 'row'};
+
     }
 `
 

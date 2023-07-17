@@ -1,21 +1,8 @@
-import { BannerContainer } from './components/BannerContainer/BannerContainer';
-import Container from './components/Container/Container';
-import {Form} from './components/SearchForm/Form';
-import useMovieStore from './stories';
+import { Outlet } from "react-router-dom";
 
 function App() {
-  const {selectedMovie} = useMovieStore();
   return(
-    <Container >
-      <Form />
-
-      {
-        selectedMovie && (
-          <BannerContainer />
-        )
-      }
-    </Container>
-  
+    <Outlet />
   );
 }
 
