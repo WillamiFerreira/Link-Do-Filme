@@ -8,12 +8,12 @@ const Container = styled(LogicalContainer)`
     align-items: center;
     border: 2px solid black;
     max-width: 400px;
-    min-width: 200px;
     padding: 10px;
 
     //desktop
     @media screen and (min-width: 768px) {
         border: 2px solid orange;
+        width: 600px;
     }
 `
 
