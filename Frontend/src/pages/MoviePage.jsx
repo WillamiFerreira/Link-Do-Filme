@@ -4,6 +4,7 @@ import Container from "../components/Container/Container";
 import { BannerContainer } from "../components/BannerContainer/BannerContainer";
 import { useEffect } from 'react';
 import axios from 'axios'
+import { Button, LinkBtn } from "../components/Button/Button";
 
 
 function MoviePage() {
@@ -25,14 +26,16 @@ function MoviePage() {
     }, []);
 
     return (
-        <Container>
+        <Container border='2px solid black'>
             <BannerContainer/>
-            <Container direction='column' textAlign='left'>
-                <h1>{selectedMovie.title}</h1>
-                <h3>{selectedMovie.year}</h3>
+            <Container direction='column' textAlign='left' border='1px solid red'>  
+                <h1>{selectedMovie.portuguese_title}</h1>
+                <h3>{selectedMovie.title}</h3>
                 <h3>{selectedMovie.director}</h3>
+                <h3>{selectedMovie.year}</h3>
                 <h3>{selectedMovie.genrer}</h3>
-                <h4>{selectedMovie.synopsis}</h4>
+                <p>{selectedMovie.synopsis}</p>
+                <a href={selectedMovie.link1} target="_blanck"><LinkBtn>Link 1</LinkBtn></a>
             </Container>
         </Container>
     );
