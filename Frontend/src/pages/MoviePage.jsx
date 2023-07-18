@@ -27,16 +27,26 @@ function MoviePage() {
 
     return (
         <Container border='2px solid black'>
-            <BannerContainer/>
-            <Container direction='column' textAlign='left' border='1px solid red'>  
-                <h1>{selectedMovie.portuguese_title}</h1>
-                <h3>{selectedMovie.title}</h3>
-                <h3>{selectedMovie.director}</h3>
-                <h3>{selectedMovie.year}</h3>
-                <h3>{selectedMovie.genrer}</h3>
-                <p>{selectedMovie.synopsis}</p>
-                <a href={selectedMovie.link1} target="_blanck"><LinkBtn>Link 1</LinkBtn></a>
-            </Container>
+
+            {
+                selectedMovie != undefined ? 
+                <>
+                <BannerContainer/>
+                <Container direction='column' textAlign='left' border='1px solid red'>  
+                    <h1>{selectedMovie.portuguese_title}</h1>
+                    <h3>{selectedMovie.title}</h3>
+                    <h3>{selectedMovie.director}</h3>
+                    <h3>{selectedMovie.year}</h3>
+                    <h3>{selectedMovie.genrer}</h3>
+                    <p>{selectedMovie.synopsis}</p>
+                    <a href={selectedMovie.link1} target="_blanck"><LinkBtn>Link 1</LinkBtn></a>
+                </Container>
+                </>
+                :
+                <CircularProgress />
+
+            }
+           
         </Container>
     );
 }

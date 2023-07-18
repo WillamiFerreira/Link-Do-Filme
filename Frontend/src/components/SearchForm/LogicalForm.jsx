@@ -2,7 +2,6 @@ import axios from 'axios';
 import useMovieStore from '../../stories';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-
 import { Button } from "../Button/Button";
 import { TextInput } from "../FormFields/TextInput/TextInput";
 
@@ -15,18 +14,11 @@ function LogicalForm({className}) {
 
     function handleInputChange(e){
         let value = e.target.value;
-        setReset();
+        //setReset();
         setMovieName(value)
     }
     console.log(movieName)
 
-    // function handleSubmit(){
-    //     axios.get(`http://localhost:3000/${location.search}`)
-    //     .then(res => setSelectedMovie(res.data))//res deve ser o objeto que representa o objeto
-    //     .catch(err => console.log(err))
-
-    // }
-    // console.log(location)
     const handleSubmit = useEffect(() => {
         const fetchData = async () => {
             try {
