@@ -4,10 +4,14 @@ import LogicalContainer from './LogicalContainer';
 const Container = styled(LogicalContainer)`
     //mobile
     display: flex;
-    width: calc(100% - 30px);
+    //width: calc(100% - 30px);
+    width: ${(props => props.width)};
     flex-direction: column;
-    align-items: center;
-    margin: 10px 0;
+    height: ${((props) => props.height)};
+    align-items: ${(props => props.alItens)};
+    justify-content: ${(props => props.jfContent)};
+
+    margin: 10px;
     border: ${((props) => props.border)};
     max-width: 400px;
     padding: 10px;

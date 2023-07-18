@@ -6,6 +6,7 @@ export const Form = styled(LogicalForm)`
     color: red;
     gap: 6px;
     margin-bottom: 8px;
+    justify-content: center;
 
 `
 

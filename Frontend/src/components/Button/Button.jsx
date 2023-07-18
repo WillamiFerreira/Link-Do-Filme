@@ -11,6 +11,7 @@ export const Button = styled(LogicalButton)`
     align-items: center;
     border-radius: 12px;
     margin: 4px;
+    cursor: pointer;
 `;
 
 export const LinkBtn = styled(Button)`
