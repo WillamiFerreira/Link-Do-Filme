@@ -2,9 +2,28 @@ import { useParams } from "react-router-dom";
 import useMovieStore from "../stories";
 import Container from "../components/Container/Container";
 import { BannerContainer } from "../components/BannerContainer/BannerContainer";
+import { useEffect } from 'react';
+import axios from 'axios'
+
 
 function MoviePage() {
-    const {selectedMovie} = useMovieStore();
+    const {id} = useParams();
+    const {selectedMovie, setSelectedMovie} = useMovieStore();
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const res = await axios.get(`http://localhost:3000/?s=${id}`);
+                setSelectedMovie(res.data)
+            } catch (err) {
+                console.log(err)
+            }
+            console.log(selectedMovie);
+            
+        };
+        fetchData();
+    }, []);
+
     return (
         <Container>
             <BannerContainer/>

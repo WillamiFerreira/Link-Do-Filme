@@ -1,6 +1,6 @@
-function LogicalButton({children, className, type}){
+function LogicalButton({children, className}){
     return(
-        <button className={className} type={type} >{children}</button>
+        <button className={className} >{children}</button>
     )
 }
 

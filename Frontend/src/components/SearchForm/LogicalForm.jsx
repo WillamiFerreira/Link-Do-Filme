@@ -1,5 +1,7 @@
 import axios from 'axios';
 import useMovieStore from '../../stories';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { Button } from "../Button/Button";
 import { TextInput } from "../FormFields/TextInput/TextInput";
@@ -7,28 +9,45 @@ import { TextInput } from "../FormFields/TextInput/TextInput";
 
 function LogicalForm({className}) {
     const {movieName, selectedMovie, setMovieName, setSelectedMovie, setReset} = useMovieStore();
+    const location = useLocation();
+    const url = window.location.href;
+    console.log(url)
 
     function handleInputChange(e){
         let value = e.target.value;
         setReset();
         setMovieName(value)
     }
-    //console.log(movieName)
+    console.log(movieName)
 
-    function handleSubmit(e){
-        e.preventDefault()
-        axios.get(`http://localhost:3000/?s=${movieName}`)
-        .then(res => setSelectedMovie(res.data))//res deve ser o objeto que representa o objeto
-        .catch(err => console.log(err))
+    // function handleSubmit(){
+    //     axios.get(`http://localhost:3000/${location.search}`)
+    //     .then(res => setSelectedMovie(res.data))//res deve ser o objeto que representa o objeto
+    //     .catch(err => console.log(err))
 
-        console.log(selectedMovie);
-    }
+    // }
+    // console.log(location)
+    const handleSubmit = useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const res = await axios.get(`http://localhost:3000/${location.search}`);
+                setSelectedMovie(res.data)
+            } catch (err) {
+                console.log(err)
+            }
+            console.log(selectedMovie);
+            
+        };
+        fetchData();
+    }, []);
+
+    
 
 
     return (
-        <form className={className} onSubmit={handleSubmit}>
-            <TextInput onChange={handleInputChange} name='name' />
-            <Button type='submit' >F</Button>
+        <form className={className}  onSubmit={handleSubmit}>
+            <TextInput onChange={handleInputChange} name='s' />
+            <Button>F</Button>
         </form>
     )
 
