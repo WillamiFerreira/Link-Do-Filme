@@ -9,8 +9,7 @@ const Container = styled(LogicalContainer)`
     height: ${((props) => props.height)};
     align-items: ${(props => props.alItens)};
     justify-content: ${(props => props.jfContent)};
-
-    margin: 10px;
+      
     border: ${((props) => props.border)};
     max-width: 400px;
     padding: ${((props) => props.padding || '0px')};
@@ -25,7 +24,8 @@ const Container = styled(LogicalContainer)`
     @media screen and (min-width: 768px) {
         max-width: 600px;
         flex-direction: ${(props) => props.direction || 'row'};
-        //height: 100%;
+
+
 
         & h1{
             margin-bottom: 16px;
