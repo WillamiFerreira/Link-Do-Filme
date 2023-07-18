@@ -3,14 +3,12 @@ import LogicalButton from "./LogicalButton";
 
 export const Button = styled(LogicalButton)`
     display: flex;
-    position: ${((props) => props.display)};
-    width: 40px;
-    height: 40px;
-    padding: 4px;
+    padding: 12px 16px;
+    position: ${props => props.position};
     justify-content: center;
+    margin: ${props => props.margin};
     align-items: center;
     border-radius: 12px;
-    margin: 4px;
     cursor: pointer;
 `;
 

@@ -19,7 +19,7 @@ function MoviePage() {
             } catch (err) {
                 console.log(err)
             }
-            console.log(selectedMovie);
+            //console.log(selectedMovie);
             
         };
         fetchData();

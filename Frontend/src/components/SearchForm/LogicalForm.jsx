@@ -1,23 +1,23 @@
 import axios from 'axios';
 import useMovieStore from '../../stories';
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+//import { useLocation } from 'react-router-dom';
 import { Button } from "../Button/Button";
 import { TextInput } from "../FormFields/TextInput/TextInput";
 
 
 function LogicalForm({className}) {
     const {movieName, selectedMovie, setMovieName, setSelectedMovie, setReset} = useMovieStore();
-    const location = useLocation();
-    const url = window.location.href;
-    console.log(url)
+    //const location = useLocation();
+    //const url = window.location.href;
+    //console.log(url)
 
     function handleInputChange(e){
         let value = e.target.value;
         //setReset();
         setMovieName(value)
     }
-    console.log(movieName)
+    //console.log(movieName)
 
     const handleSubmit = useEffect(() => {
         const fetchData = async () => {
@@ -27,7 +27,7 @@ function LogicalForm({className}) {
             } catch (err) {
                 console.log(err)
             }
-            console.log(selectedMovie);
+            
             
         };
         fetchData();

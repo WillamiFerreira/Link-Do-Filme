@@ -6,14 +6,14 @@ import { Button } from '../Button/Button';
 function LogicalBannerContainer({className}){
 
     const url = useLocation();
-    console.log(url);
+    //console.log(url);
     const {selectedMovie} = useMovieStore();
     return (
         
         <div className={className}>
             {url.pathname != '/' && (
                 
-                <Button display='absolute' onClick={() => history.back()}>Voltar</Button>
+                <Button display='absolute' onClick={() => history.back()} margin='4px' position='absolute' >Voltar</Button>
                 
             )}
             <Link to={`/${selectedMovie.title}`}><img src={selectedMovie.banner} alt="Movie Banner" /></Link>
