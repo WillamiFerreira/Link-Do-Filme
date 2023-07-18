@@ -12,10 +12,10 @@ function Home() {
     const {selectedMovie} = useMovieStore();
     
     return ( 
-        <Container direction='column' border='2px solid black' width='100%'>
+        <Container direction='column' border='2px solid black' width='100%' padding='10px'>
         <Form />
         {
-            selectedMovie ? <BannerContainer /> : <Container height='475px' jfContent='center' alItens='center'><CircularProgress /></Container>
+            selectedMovie ? <BannerContainer width='50%' /> : <Container height='475px' jfContent='center' alItens='center'><CircularProgress /></Container>
         }
       </Container>
      );

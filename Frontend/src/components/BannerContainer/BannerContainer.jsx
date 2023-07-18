@@ -26,17 +26,25 @@ function LogicalBannerContainer({className}){
 
 export const BannerContainer = styled(LogicalBannerContainer)`
     //mobile
-    
     width: 100%;
-
     & > a > img {
         display: block;
         width: 100%;
         height: auto;
     }
-
+    //Desktop
     @media (min-width: 768px) {
-        width: 70%;
+        & > a > img {
+        display: block;
+        width: 100%;
+        width: ${props => props.width};
+        height: auto;
+
+        & {
+            margin: 0 auto;
+        }
+
+    }
     }
 
 

@@ -26,13 +26,13 @@ function MoviePage() {
     }, []);
 
     return (
-        <Container border='2px solid black'>
-
+        <Container border='2px solid green'>
             {
                 selectedMovie != undefined ? 
                 <>
-                <BannerContainer/>
-                <Container direction='column' textAlign='left' border='1px solid red'>  
+                <BannerContainer width='100%'/>
+
+                <Container direction='column' textAlign='left' border='1px solid red' width='100%'>  
                     <h1>{selectedMovie.portuguese_title}</h1>
                     <h3>{selectedMovie.title}</h3>
                     <h3>{selectedMovie.director}</h3>
