@@ -19,8 +19,9 @@ const getAllMovies = async () => {
 
 const getMovieByTitle = async (movieTitle) => {
     try{
-        const movie = await Movie.findOne({$or: [ {to_search_original_title: movieTitle},
-                                                  {to_search_portuguese_title: movieTitle}]}); //teste 
+        // const movie = await Movie.findOne({$or: [{to_search_original_title: movieTitle},
+        //                                           {to_search_portuguese_title: movieTitle}]}); //teste 
+        const movie = await Movie.findOne({tags: movieTitle })
         return movie;
 
     }catch(err){
