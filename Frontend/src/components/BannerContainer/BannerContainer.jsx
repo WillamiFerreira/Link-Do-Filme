@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import useMovieStore from '../../stories';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '../Button/Button';
@@ -6,6 +6,8 @@ import { useState } from 'react';
 
 function LogicalBannerContainer({className}){
     const [isPressed, setIsPressed] = useState(false);
+    const url = useLocation();
+    const {selectedMovie} = useMovieStore();
 
     const handlePress = () => {
         setIsPressed(true);
@@ -18,8 +20,6 @@ function LogicalBannerContainer({className}){
       };
 
 
-    const url = useLocation();
-    const {selectedMovie} = useMovieStore();
     return (
         
         <div className={className}>
@@ -51,11 +51,20 @@ function LogicalBannerContainer({className}){
 export const BannerContainer = styled(LogicalBannerContainer)`
     //mobile
     width: 100%;
+    margin: ${props => props.margin || 0};
     & > a > img {
         display: block;
         width: 100%;
         height: auto;
+        
+        ${props => 
+            typeof props.isMovieSelected == 'string' &&
+            css`
+                display: none
+            `
+        }
     }
+
     //Desktop
     @media (min-width: 768px) {
         & > a > img {

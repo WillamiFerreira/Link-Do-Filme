@@ -14,7 +14,9 @@ function MoviePage() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`https://api-link-do-filme.onrender.com/?s=${id}`);
+                //const res = await axios.get(`https://api-link-do-filme.onrender.com/?s=${id}`);
+                const res = await axios.get(`http://localhost:3000/?s=${id}`);
+                
                 setSelectedMovie(res.data)
             } catch (err) {
                 console.log(err)

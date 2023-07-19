@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import { BannerContainer }from "../components/BannerContainer/BannerContainer";
 import Container from "../components/Container/Container";
 import { Form } from "../components/SearchForm/Form";
@@ -7,13 +8,17 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 function Home() {
     const {selectedMovie} = useMovieStore();
+    console.log(selectedMovie)
     
     return ( 
         <Container direction='column' border='2px solid black' width='100%' padding='10px'>
         <Form />
+
         {
-            selectedMovie ? <BannerContainer width='50%' /> : <Container height='475px' jfContent='center' alItens='center'><CircularProgress /></Container>
+            typeof(selectedMovie) != 'array' ? <BannerContainer width='50%' isMovieSelected={selectedMovie} margin='12px 0 0 0' /> : <Container height='475px' jfContent='center' alItens='center'><CircularProgress /></Container>
         }
+
+       
       </Container>
      );
 }
