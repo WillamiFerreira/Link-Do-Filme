@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     min-width: 100vw;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
 body{
