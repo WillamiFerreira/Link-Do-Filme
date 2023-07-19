@@ -11,7 +11,7 @@ const Container = styled(LogicalContainer)`
     justify-content: ${(props => props.jfContent)};
       
     border: ${((props) => props.border)};
-    max-width: 400px;
+    max-width: 576px;
     padding: ${((props) => props.padding || '0px')};
     text-align: ${((props) => props.textAlign || 'center')};
 

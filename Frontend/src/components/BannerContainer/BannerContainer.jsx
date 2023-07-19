@@ -2,18 +2,42 @@ import styled from 'styled-components';
 import useMovieStore from '../../stories';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '../Button/Button';
+import { useState } from 'react';
 
 function LogicalBannerContainer({className}){
+    const [isPressed, setIsPressed] = useState(false);
+
+    const handlePress = () => {
+        setIsPressed(true);
+        //console.log('entrou')
+      };
+
+    const handleRelease = () => {
+        setIsPressed(false);
+        //console.log('saiu')
+      };
+
 
     const url = useLocation();
-    //console.log(url);
     const {selectedMovie} = useMovieStore();
     return (
         
         <div className={className}>
             {url.pathname != '/' && (
                 
-                <Button display='absolute' onClick={() => history.back()} margin='4px' position='absolute' >Voltar</Button>
+                <Button 
+                    display='absolute' 
+                    onClick={() => history.back()} 
+                    margin='8px' 
+                    position='absolute'
+
+                    onMouseDown={handlePress}
+                    onMouseUp={handleRelease}
+                    onTouchStart={handlePress}
+                    onTouchEnd={handleRelease}
+                    pressed={isPressed}
+                    
+                >Voltar</Button>
                 
             )}
             <Link to={`/${selectedMovie.title}`}><img src={selectedMovie.banner} alt="Movie Banner" /></Link>
