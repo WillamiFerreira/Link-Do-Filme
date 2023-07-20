@@ -15,7 +15,7 @@ function Home() {
         <Form />
 
         {
-            typeof(selectedMovie) != 'array' ? <BannerContainer width='50%' isMovieSelected={selectedMovie} margin='12px 0 0 0' /> : <Container height='475px' jfContent='center' alItens='center'><CircularProgress /></Container>
+            selectedMovie ? <BannerContainer width='50%' isMovieSelected={selectedMovie} margin='12px 0 0 0' /> : <Container height='475px' jfContent='center' alItens='center'><CircularProgress /></Container>
         }
 
        
