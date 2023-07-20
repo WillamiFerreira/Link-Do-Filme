@@ -20,6 +20,7 @@ function LogicalForm({className}) {
     //console.log(movieName)
 
     const handleSubmit = useEffect(() => {
+        setSelectedMovie(undefined)
         const fetchData = async () => {
             try {
                 const res = await axios.get(`https://api-link-do-filme.onrender.com/${location.search}`);
