@@ -7,10 +7,11 @@ const Movie = require('../models/Movie')
 //Função para objeter todos dados da coleção
 
 
-const getAllMovies = async () => {
+const getRandomMovie = async () => {
     try{
-        const movies = await Movie.find();
-        return movies;
+        const randomMovie = await Movie.aggregate([{$sample:{size: 1}}])
+        return randomMovie[0];
+        
     }catch(err){
         res.status(500).json({message: err.message});
     }
@@ -30,7 +31,7 @@ const getMovieByTitle = async (movieTitle) => {
 }
 
 module.exports = {
-    getAllMovies,
+    getRandomMovie,
     getMovieByTitle
 }
 
