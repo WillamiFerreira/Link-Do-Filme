@@ -10,7 +10,8 @@ const getAllgetByTitleMovie = async (req, res) =>{
         const title = req.query.s
         const lowerTitle = title.toLowerCase() //Convertendo para lowercase
         const noAccentsLowerTitle = lowerTitle.normalize('NFD').replace(/[\u0300-\u036f]/g, "");//retirando os acentos
-        const noAccentsLowerTitleFinal = noAccentsLowerTitle.replace(/\+/g, " ")//trocando os "+" por espaço vazio;
+        const removedAdictionalBlanckSpaces = noAccentsLowerTitle.trim();
+        const noAccentsLowerTitleFinal = removedAdictionalBlanckSpaces.replace(/\+/g, " ")//trocando os "+" por espaço vazio;
 
         const movie = await movieModule.getMovieByTitle(noAccentsLowerTitleFinal);
         res.send(movie);
