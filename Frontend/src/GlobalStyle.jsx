@@ -1,6 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 
+
+
 const GlobalStyle = createGlobalStyle`
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('../src/assets/fonts/coolvetica rg.otf') format('opentype');
+}
+
 *{
     margin:0;
     padding:0;
@@ -16,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
     justify-content: center;
 }
 body{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Coolvetica', sans-serif;
     //background: #373737;
 }
 
