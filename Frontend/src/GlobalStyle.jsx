@@ -5,7 +5,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
 @font-face {
   font-family: 'Coolvetica';
-  src: url('./assets/fonts/coolvetica rg.otf') format('opentype');
+  src: url('../src/assets/fonts/coolvetica rg.otf') format('opentype');
 }
 
 *{
