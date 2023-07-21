@@ -1,10 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 
-import Coolvetica from "../src/assets/fonts/coolvetica rg.otf"
-
 
 const GlobalStyle = createGlobalStyle`
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 *{
     margin:0;
@@ -23,8 +21,7 @@ const GlobalStyle = createGlobalStyle`
 body{
     font-family: Arial, Helvetica, sans-serif;
     h1{
-        font-family: 'Caprasimo', cursive;       
-        font-weight: 500;
+        font-family: 'Bebas Neue', sans-serif;
     }
 }
 
