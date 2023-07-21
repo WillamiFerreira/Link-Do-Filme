@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const app = express();
-app.use('/assets',express.static('fonts'));
+app.use('../assets',express.static('fonts'));
 app.use(cors());
 app.use(express.json());
 
