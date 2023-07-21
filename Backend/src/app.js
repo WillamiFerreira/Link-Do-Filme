@@ -9,7 +9,7 @@ const path = require('path');
 
 const app = express();
 const publicDirectoryPath = path.join(__dirname, '../assets');
-app.use(publicDirectoryPath);
+app.use(express.static(publicDirectoryPath));
 
 app.use(cors());
 app.use(express.json());
