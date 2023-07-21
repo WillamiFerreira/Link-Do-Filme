@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import LogicalContainer from './LogicalContainer';
 
 const Container = styled(LogicalContainer)`
+
     //mobile
     display: flex;
     width: ${(props => props.width)};
@@ -9,7 +10,7 @@ const Container = styled(LogicalContainer)`
     height: ${((props) => props.height)};
     align-items: ${(props => props.alItens)};
     justify-content: ${(props => props.jfContent)};
-      
+
     border: ${((props) => props.border)};
     max-width: 576px;
     padding: ${((props) => props.padding || '0px')};

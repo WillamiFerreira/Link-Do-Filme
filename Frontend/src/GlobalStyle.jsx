@@ -1,12 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
+import Coolvetica from "../src/assets/fonts/coolvetica rg.otf"
 
 
 const GlobalStyle = createGlobalStyle`
-@font-face {
-  font-family: 'Coolvetica';
-  src: url('../fonts/coolvetica rg.otf') format('opentype');
-}
+
 
 *{
     margin:0;
@@ -25,8 +23,8 @@ const GlobalStyle = createGlobalStyle`
 body{
     font-family: Arial, Helvetica, sans-serif;
     h1{
-        font-family: 'Coolvetica', sans-serif;
-        
+        font-family: 'Caprasimo', cursive;       
+        font-weight: 500;
     }
 }
 
