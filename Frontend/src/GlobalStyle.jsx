@@ -5,7 +5,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
 @font-face {
   font-family: 'Coolvetica';
-  src: url('../src/assets/fonts/coolvetica rg.otf') format('opentype');
+  src: url('./assets/fonts/coolvetica rg.otf') format('opentype');
 }
 
 *{
@@ -23,8 +23,11 @@ const GlobalStyle = createGlobalStyle`
     justify-content: center;
 }
 body{
-    font-family: 'Coolvetica', sans-serif;
-    //background: #373737;
+    font-family: Arial, Helvetica, sans-serif;
+    h1{
+        font-family: 'Coolvetica', sans-serif;
+        
+    }
 }
 
 `
