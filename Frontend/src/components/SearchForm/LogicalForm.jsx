@@ -30,7 +30,6 @@ function LogicalForm({className}) {
                 console.log(err)
             }
             
-            
         };
         fetchData();
     }, []);
