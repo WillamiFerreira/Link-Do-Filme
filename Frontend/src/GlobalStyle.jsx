@@ -22,6 +22,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     h1{
         font-family: 'Bebas Neue', sans-serif;
+        letter-spacing: 2px;
     }
 }
 
