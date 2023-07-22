@@ -11,7 +11,7 @@ function Home() {
     console.log(selectedMovie)
     
     return ( 
-        <Container direction='column' border='2px solid black' width='100%' padding='10px'>
+        <Container direction='column'  width='100%' minHeight='100vh' padding='10px'>
         <Form />
 
         {

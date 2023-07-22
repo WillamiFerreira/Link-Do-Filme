@@ -14,8 +14,8 @@ function MoviePage() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`https://api-link-do-filme.onrender.com/?s=${id}`);
-                //const res = await axios.get(`http://localhost:3000/?s=${id}`);
+                //const res = await axios.get(`https://api-link-do-filme.onrender.com/?s=${id}`);
+                const res = await axios.get(`http://localhost:3000/?s=${id}`);
                 
                 setSelectedMovie(res.data)
             } catch (err) {
@@ -28,20 +28,22 @@ function MoviePage() {
     }, []);
 
     return (
-        <Container border='2px solid green'>
+        <Container border='2px solid green' minHeight='100vh'>
             {
                 selectedMovie != undefined ? 
                 <>
                 <BannerContainer width='100%'/>
 
-                <Container direction='column' textAlign='left' border='1px solid red' width='100%' padding='10px' >  
-                    <h1>{selectedMovie.portuguese_title}</h1>
-                    <h3>{selectedMovie.title}</h3>
-                    <h3>{selectedMovie.director}</h3>
-                    <h3>{selectedMovie.year}</h3>
-                    <h3>{selectedMovie.genrer}</h3>
-                    <p>{selectedMovie.synopsis}</p>
-                    <a href={selectedMovie.link1} target="_blanck"><LinkBtn>Link 1</LinkBtn></a>
+                <Container direction='column' textAlign='left' border='1px solid red' width='100%'  padding='10px' height='100%' flexGrow='1' jfContent='space-between' >
+                    <Container  border='1px solid white' textAlign='left' >
+                        <h1>{selectedMovie.portuguese_title}</h1>
+                        <h3>{selectedMovie.title}</h3>
+                        <h3>{selectedMovie.director}</h3>
+                        <h3>{selectedMovie.year}</h3>
+                        <h3>{selectedMovie.genrer}</h3>
+                        <p>{selectedMovie.synopsis}</p>
+                    </Container>
+                    <a href={selectedMovie.link1} target="_blanck"><LinkBtn >Link 1</LinkBtn></a>
                 </Container>
                 </>
                 :

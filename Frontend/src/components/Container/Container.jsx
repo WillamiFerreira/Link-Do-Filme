@@ -4,10 +4,11 @@ import LogicalContainer from './LogicalContainer';
 const Container = styled(LogicalContainer)`
 
     //mobile
-    display: flex;
+    display: ${(props => props.display|| "flex")};
     width: ${(props => props.width)};
-    flex-direction: column;
     height: ${((props) => props.height)};
+    min-height: ${(props => props.minHeight)};
+    flex-direction: column;
     align-items: ${(props => props.alItens)};
     justify-content: ${(props => props.jfContent)};
 
@@ -15,9 +16,17 @@ const Container = styled(LogicalContainer)`
     max-width: 576px;
     padding: ${((props) => props.padding || '0px')};
     text-align: ${((props) => props.textAlign || 'center')};
+    flex-grow: ${((props) => props.flexGrow || 1)};
+
+    background-color: #1A1A1A;
+    color: #FFFFFF;
+
 
     & h1, h3, h4, a {
         width: 100%;
+    }
+    & h1{
+        border-bottom: 1px solid white;
     }
 
 

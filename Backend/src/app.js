@@ -7,8 +7,6 @@ const cors = require('cors');
 
 
 const app = express();
-const publicDirectoryPath = path.join(__dirname, '../assets');
-
 app.use(cors());
 app.use(express.json());
 
