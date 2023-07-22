@@ -14,8 +14,8 @@ function MoviePage() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                //const res = await axios.get(`https://api-link-do-filme.onrender.com/?s=${id}`);
-                const res = await axios.get(`http://localhost:3000/?s=${id}`);
+                const res = await axios.get(`https://api-link-do-filme.onrender.com/?s=${id}`);
+                //const res = await axios.get(`http://localhost:3000/?s=${id}`);
                 
                 setSelectedMovie(res.data)
             } catch (err) {
@@ -28,7 +28,7 @@ function MoviePage() {
     }, []);
 
     return (
-        <Container border='2px solid green' minHeight='100vh'>
+        <Container minHeight='100vh'>
             {
                 selectedMovie != undefined ? 
                 <>
