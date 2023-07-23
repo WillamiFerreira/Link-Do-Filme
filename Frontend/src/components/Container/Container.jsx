@@ -17,9 +17,14 @@ const Container = styled(LogicalContainer)`
     padding: ${((props) => props.padding || '0px')};
     text-align: ${((props) => props.textAlign || 'center')};
     flex-grow: ${((props) => props.flexGrow || 1)};
+    gap: ${((props) => props.gap || 0)};
+    font-size: clamp(16px, 3vw, 24px);
 
     background-color: #1A1A1A;
     color: #FFFFFF;
+
+
+ 
 
 
     & h1, h3, h4, a {

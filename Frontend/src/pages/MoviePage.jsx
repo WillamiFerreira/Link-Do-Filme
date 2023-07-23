@@ -14,8 +14,8 @@ function MoviePage() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`https://api-link-do-filme.onrender.com/?s=${id}`);
-                //const res = await axios.get(`http://localhost:3000/?s=${id}`);
+                //const res = await axios.get(`https://api-link-do-filme.onrender.com/?s=${id}`);
+                const res = await axios.get(`http://localhost:3000/?s=${id}`);
                 
                 setSelectedMovie(res.data)
             } catch (err) {
@@ -34,16 +34,16 @@ function MoviePage() {
                 <>
                 <BannerContainer width='100%'/>
 
-                <Container direction='column' textAlign='left' border='1px solid red' width='100%'  padding='10px' height='100%' flexGrow='1' jfContent='space-between' >
-                    <Container  border='1px solid white' textAlign='left' >
+                <Container direction='column' textAlign='left' border='' width='100%'  padding='10px' height='100%' flexGrow='1' jfContent='space-between' >
+                    <Container  border='' textAlign='left' gap='8px 0px' >
                         <h1>{selectedMovie.portuguese_title}</h1>
-                        <h3>{selectedMovie.title}</h3>
-                        <h3>{selectedMovie.director}</h3>
-                        <h3>{selectedMovie.year}</h3>
-                        <h3>{selectedMovie.genrer}</h3>
+                        <h4>{selectedMovie.title}</h4>
+                        <h4>{selectedMovie.director}</h4>
+                        <h4>{selectedMovie.year}</h4>
+                        <h4>{selectedMovie.genrer}</h4>
                         <p>{selectedMovie.synopsis}</p>
                     </Container>
-                    <a href={selectedMovie.link1} target="_blanck"><LinkBtn >Link 1</LinkBtn></a>
+                    <a href={selectedMovie.link1} target="_blanck"><LinkBtn margin="6px 0 0 0" >Link 1</LinkBtn></a>
                 </Container>
                 </>
                 :
