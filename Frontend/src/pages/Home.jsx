@@ -13,8 +13,6 @@ function Home() {
     const {selectedMovie} = useMovieStore();
     const location = useLocation();
     const navigate = useNavigate();
-    //console.log(location)
-    //console.log(selectedMovie)
 
     const handlePress = () => {
         setIsPressed(true);
@@ -29,11 +27,9 @@ function Home() {
     function handleNavigation(){
         navigate('/')
     }
-
-
     
     return ( 
-        <Container direction='column'  width='100%' minHeight='100vh' padding='10px' >
+        <Container direction='column'  width='100%' minHeight='100vh' padding='10px'  >
             <Container flexGrow='0' direction='row' jfContent='space-between' alItens="center" gap="0 2vw" padding='0 4px' >
                 {
                     location.search 
@@ -49,7 +45,14 @@ function Home() {
                     
                 }
                 <Form />
+
             </Container>
+            {
+                location.search 
+                ? ""
+                : <p onClick={() => window.location.reload()} style={{marginTop: 8 + 'px', cursor: "pointer"}}>New random movie</p>
+
+            }
         {
             selectedMovie  ? <BannerContainer width='50%' isMovieSelected={selectedMovie} margin='12px 0 0 0' /> : <Container height='475px' jfContent='center' alItens='center'><CircularProgress /></Container>
         }
