@@ -3,6 +3,8 @@ import LogicalForm from './LogicalForm';
 
 export const Form = styled(LogicalForm)`
     display: flex;
-    justify-content: space-evenly;
+    justify-content: right;
+    column-gap: 2vw;
+    width: 100%;
 
 `

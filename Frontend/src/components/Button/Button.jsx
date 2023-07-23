@@ -48,3 +48,26 @@ export const LinkBtn = styled(Button)`
 
 `
 
+export const HomeBtn = styled(Button)`
+    padding: 0;
+    width: 70px;
+    height: 40px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+
+
+    background-color: transparent;
+
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: normal;
+
+    ${(props) => 
+        props.pressed &&
+        css`
+            color: purple;
+
+        `    
+    }
+
+`

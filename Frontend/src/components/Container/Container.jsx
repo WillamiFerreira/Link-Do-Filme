@@ -8,7 +8,7 @@ const Container = styled(LogicalContainer)`
     width: ${(props => props.width)};
     height: ${((props) => props.height)};
     min-height: ${(props => props.minHeight)};
-    flex-direction: column;
+    flex-direction: ${(props) => props.direction || "column"};
     align-items: ${(props => props.alItens)};
     justify-content: ${(props => props.jfContent)};
 
@@ -32,6 +32,7 @@ const Container = styled(LogicalContainer)`
     }
     & h1{
         border-bottom: 1px solid white;
+
     }
 
 
