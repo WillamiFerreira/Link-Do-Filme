@@ -234,7 +234,7 @@ Error generating stack: `+i.message+`
 
     font-size: 18px;
     font-weight:500;
-`;function EE({className:e}){const{movieName:t,selectedMovie:n,setMovieName:r,setSelectedMovie:o,setReset:i}=Va();function l(s){let u=s.target.value;r(u)}const a=O.useEffect(()=>{o(void 0),(async()=>{try{const u=await Gg.get(`http://localhost:3000/${location.search}`);o(u.data)}catch(u){console.log(u)}})()},[]);return W.jsxs("form",{className:e,onSubmit:a,children:[W.jsx(xE,{onChange:l,name:"s"}),W.jsx(Tf,{children:"F"})]})}const kE=pr(EE)`
+`;function EE({className:e}){const{movieName:t,selectedMovie:n,setMovieName:r,setSelectedMovie:o,setReset:i}=Va();function l(s){let u=s.target.value;r(u)}const a=O.useEffect(()=>{o(void 0),(async()=>{try{const u=await Gg.get(`https://api-link-do-filme.onrender.com/${location.search}`);o(u.data)}catch(u){console.log(u)}})()},[]);return W.jsxs("form",{className:e,onSubmit:a,children:[W.jsx(xE,{onChange:l,name:"s"}),W.jsx(Tf,{children:"F"})]})}const kE=pr(EE)`
     display: flex;
     justify-content: space-evenly;
 

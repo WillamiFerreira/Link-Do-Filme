@@ -23,8 +23,8 @@ function LogicalForm({className}) {
         setSelectedMovie(undefined)
         const fetchData = async () => {
             try {
-                //const res = await axios.get(`https://api-link-do-filme.onrender.com/${location.search}`);
-                const res = await axios.get(`http://localhost:3000/${location.search}`);
+                const res = await axios.get(`https://api-link-do-filme.onrender.com/${location.search}`);
+                //const res = await axios.get(`http://localhost:3000/${location.search}`);
                 setSelectedMovie(res.data)
             } catch (err) {
                 console.log(err)
