@@ -12,7 +12,7 @@ const Container = styled(LogicalContainer)`
     align-items: ${(props => props.alItens)};
     justify-content: ${(props => props.jfContent)};
 
-    border: ${((props) => props.border)};
+    //border: ${((props) => props.border)};
     max-width: 576px;
     padding: ${((props) => props.padding || '0px')};
     text-align: ${((props) => props.textAlign || 'center')};
@@ -22,10 +22,6 @@ const Container = styled(LogicalContainer)`
 
     background-color: #1A1A1A;
     color: #FFFFFF;
-
-
- 
-
 
     & h1, h3, h4, a {
         width: 100%;
@@ -38,13 +34,24 @@ const Container = styled(LogicalContainer)`
 
     //desktop
     @media screen and (min-width: 768px) {
-        max-width: 600px;
+        max-width: 900px;
+        min-height: 0% !important;
+        height: 500px !important;
         flex-direction: ${(props) => props.direction || 'row'};
-
-
+        gap: 0px;
+        flex-grow: 0;
+        max-height: 100% !important;
+        overflow: hidden;
+        //border: 3px solid grey;
+        border-radius: 12px;
 
         & h1{
             margin-bottom: 16px;
+            font-size: 32px;
+        }
+
+        & p{
+            font-size: 21px;
         }
 
     }

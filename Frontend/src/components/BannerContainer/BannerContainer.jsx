@@ -67,17 +67,16 @@ export const BannerContainer = styled(LogicalBannerContainer)`
 
     //Desktop
     @media (min-width: 768px) {
+        max-width: 40%;
+
         & > a > img {
+        
         display: block;
-        width: 100%;
-        width: ${props => props.width};
+        //height: 100%;
+        //width: 100%;
+        //width: ${props => props.width};
         height: auto;
-
-        & {
-            margin: 0 auto;
         }
-
-    }
     }
 
 

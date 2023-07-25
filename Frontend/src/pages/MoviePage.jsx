@@ -28,14 +28,13 @@ function MoviePage() {
     }, []);
 
     return (
-        <Container minHeight='100vh'>
+        <Container minHeight='100vh' border='3px solid grey'>
             {
                 selectedMovie != undefined ? 
                 <>
-                <BannerContainer width='100%'/>
-
-                <Container direction='column' textAlign='left' border='' width='100%'  padding='10px' height='100%' flexGrow='1' jfContent='space-between' >
-                    <Container  border='' textAlign='left' gap='8px 0px' >
+                <BannerContainer border="1px solid green" />
+                <Container direction='column' textAlign='left' padding='10px' height='100%' flexGrow='1' jfContent='space-between' border='2px solid green' >
+                    <Container  border='1px solid white' textAlign='left' gap='8px 0px' direction="column" >
                         <h1>{selectedMovie.portuguese_title}</h1>
                         <h4>{selectedMovie.title}</h4>
                         <h4>{selectedMovie.director}</h4>

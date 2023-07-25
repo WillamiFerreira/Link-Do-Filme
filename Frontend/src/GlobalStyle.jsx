@@ -17,6 +17,13 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    background-color: #161616;
+
+    @media screen and (min-width: 768px){
+        align-items: center;
+    }
+
+    
 }
 body{
     font-family: Arial, Helvetica, sans-serif;
@@ -26,6 +33,7 @@ body{
         letter-spacing: 2px;
     }
 }
+
 
 `
 
